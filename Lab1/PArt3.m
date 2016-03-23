@@ -38,11 +38,15 @@ error=0.1;
 %iterations for h
 [h,Q,time,iterQ_Control]=ControlLawIterationNoVisualize(gamma,gridSize,nrOfActions,error,model);
 
+iterQ_Control
+
 tic
 ControlLawIterationNoVisualizeForTime(gamma,gridSize,nrOfActions,error,model);
 toc
 
 [hmat,Q,iterQ_Q] = QIterationNoVisualize( gamma,gridSize,nrOfActions, error, model);
+
+iterQ_Q
 
 tic
 QIterationNoVisualizeForTime( gamma,gridSize,nrOfActions, error, model);

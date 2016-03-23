@@ -25,6 +25,8 @@ function [hmat,Q] = QIteration( gamma,gridSize,nrOfActions, error, model)
      viscfg.gview = gridnav_visualize(viscfg);  
     end
     
+    pause
+    
     hmat=zeros(gridSize(1),gridSize(2));
     for k=1:gridSize(1)
         for m=1:gridSize(2)
