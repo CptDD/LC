@@ -25,7 +25,6 @@ viscfg.model = model;
 
 x_start=[3;1];
 nrOfActions=4;
-maxIter=100;
 
-NaiveFunction(x_start,maxIter,nrOfActions,model);
+NaiveFunctionEnd(x_start,nrOfActions,model);
 
