@@ -23,7 +23,7 @@ viscfg = struct;
 viscfg.model = model;
     
     
-gamma=0.9;
+gamma=0.99;
 error=0.1;
 [hmat,Q]=QIteration(gamma,gridSize,nrOfActions,error,model);
 

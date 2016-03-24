@@ -32,13 +32,17 @@ model = gridnav_problem('model', cfg);
 %     viscfg.x = xplus;
 %     viscfg.gview = gridnav_visualize(viscfg);    % note we remember the view...
     
-gamma=0.7;
+
 error=0.1;
+gamma=0.7;
+for i=0.6:0.05:0.99
+    gamma=i;
 %iterQ_Control is a vector each elelemt corresponds to the number of
 %iterations for h
 [h,Q,time,iterQ_Control]=ControlLawIterationNoVisualize(gamma,gridSize,nrOfActions,error,model);
 
 iterQ_Control
+length(iterQ_Control)
 
 tic
 ControlLawIterationNoVisualizeForTime(gamma,gridSize,nrOfActions,error,model);
@@ -51,3 +55,4 @@ iterQ_Q
 tic
 QIterationNoVisualizeForTime( gamma,gridSize,nrOfActions, error, model);
 toc
+end
