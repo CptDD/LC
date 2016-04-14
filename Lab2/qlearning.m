@@ -27,11 +27,7 @@ for i=1:config.T
     k=0;
     Rtemp=0;
     terminal=0;
-    i
     while(k<=config.K)&&(terminal~=1)
-        if(terminal==1)
-            disp('alma');
-        end
         %get a random value to use epsilon
         prob=rand();
         if (prob<config.epsilon)% when this value is less than epsilon
@@ -54,7 +50,7 @@ for i=1:config.T
         Rtemp=Rtemp + config.gamma^k*rplus;
     end
     viscfg.Q = Q;
-    viscfg.gview = gridnav_visualize(viscfg);  
+    viscfg.gview = gridnav_visualize(viscfg); 
     Rseq(i)=Rtemp;
     Qseq{i}=Q;
 end

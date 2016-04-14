@@ -27,11 +27,7 @@ for i=1:config.T
     k=0;
     Rtemp=0;
     terminal=0;
-    i
     while(k<=config.K)&&(terminal~=1)
-        if(terminal==1)
-            disp('alma');
-        end
         %get a random value to use epsilon
         prob=rand();
         if (prob<config.epsilon)% when this value is less than epsilon
@@ -53,18 +49,14 @@ for i=1:config.T
         xk=xplus;
         Rtemp=Rtemp + config.gamma^k*rplus;
     end
-    config.epsilon=config.epsilon*config.d
-    config.epsilon
+    config.epsilon=config.epsilon*config.d;
+    config.epsilon;
     viscfg.Q = Q;
     viscfg.gview = gridnav_visualize(viscfg);  
     Rseq(i)=Rtemp;
     Qseq{i}=Q;
 end
 
-QoptimQtrials;
-figure;
-plot(Rseq);
-grid;
 % (see the examples and your solutions to earlier labs for ideas)
 
 % run T trials, choosing actions with epsilon-greedy and updating the Q function at each step 

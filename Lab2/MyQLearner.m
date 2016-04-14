@@ -22,6 +22,8 @@ model = gridnav_problem('model', cfg);
      % show the updated state of the agent
 viscfg = struct;
 viscfg.model = model;
+viscfg.x=[1;1];
+viscfg.gview = gridnav_visualize(viscfg);
 % 
 % viscfg.gview = gridnav_visualize(viscfg);   
     
@@ -38,24 +40,24 @@ conf.visualize=1;
 [Qseq,Rseq]=qlearning(conf);
 
 
-% to show a Q-function, we place it on viscfg
-viscfg.x = [];  % before, remove the robot state since we don't want to show it anymore
-% as an example, we initialize an arbitrary Q-function
-% (in your solution the Q-function will be computed by the algorithm)
-% note that Q must be an array with standard dimensions in order to be handled
-% correctly by the visualization function:
-% size on X (here, 5) x size on Y (here, 5) x number of actions (here, 4)
-% n (= number of states = 5) rows, and 2 (number of actions) columns
-viscfg.Q = Q;
-viscfg.gview = gridnav_visualize(viscfg);   
-
-% to show a policy in addition to the Q-function, add it to viscfg 
-% h also has a standard structure: a matrix with 
-% (size on X x size on Y) elements, each representing an action, with values 1 to 4
-   % [xplus, rplus, terminal] = gridnav_mdp(model, [2; 1], 2); 
-
-
-viscfg.h = hmat;
-% if we wanted to NOT reuse the view, but create a new figure, we could do:
-%viscfg.gview = [];
-viscfg.gview = gridnav_visualize(viscfg);
+% % to show a Q-function, we place it on viscfg
+% viscfg.x = [];  % before, remove the robot state since we don't want to show it anymore
+% % as an example, we initialize an arbitrary Q-function
+% % (in your solution the Q-function will be computed by the algorithm)
+% % note that Q must be an array with standard dimensions in order to be handled
+% % correctly by the visualization function:
+% % size on X (here, 5) x size on Y (here, 5) x number of actions (here, 4)
+% % n (= number of states = 5) rows, and 2 (number of actions) columns
+% viscfg.Q = Q;
+% viscfg.gview = gridnav_visualize(viscfg);   
+% 
+% % to show a policy in addition to the Q-function, add it to viscfg 
+% % h also has a standard structure: a matrix with 
+% % (size on X x size on Y) elements, each representing an action, with values 1 to 4
+%    % [xplus, rplus, terminal] = gridnav_mdp(model, [2; 1], 2); 
+% 
+% 
+% viscfg.h = hmat;
+% % if we wanted to NOT reuse the view, but create a new figure, we could do:
+% %viscfg.gview = [];
+% viscfg.gview = gridnav_visualize(viscfg);

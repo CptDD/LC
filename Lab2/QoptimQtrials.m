@@ -5,7 +5,6 @@ diffseq=0;
 a=size(Qstar);
 for i=1:conf.T
     diff=Qseq{i}-Qstar;
-    
     Qdi=Qdiff(diff,a(3));
     diffseq=[diffseq Qdi];
 end
