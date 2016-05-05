@@ -5,7 +5,6 @@ K=35;
 N=5;
 adp_example;
 exectimes=[]
-exectimes=[exectimes exectime];
 i1=0;
    for i=linspace(-pi,pi,K)
        i1=i1+1;
@@ -28,7 +27,7 @@ i1=0;
 
   Qres=[];
   Hres=[];
-  N1=15:20;
+  N1=15:20
 
     
 for N=N1
@@ -71,6 +70,6 @@ plot(N1,Hres);
 title('h distance')
 grid
 figure
-plot(1:length(exectimes),exectimes)
+plot(N1,exectimes)
 title('Execution times')
 grid
